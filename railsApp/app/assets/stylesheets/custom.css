@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(4, 4, 107);
+    height: 100%;
+}
+.blue{
+    background-color: rgb(4, 4, 107);
+}
+.red{
+    background-color: rgb(185, 24, 24);
+}
+
+nav{
+    border-spacing: border-box;
+}
+
+#logo{
+    padding-top: 100px;
+}
+
