@@ -2,12 +2,22 @@
 
 <h1>Pages</h1>
 
-<div id="pages">
+<div id="pages" class = "row">
   <% @pages.each do |page| %>
-    <%= render page %>
-    <p>
-      <%= link_to "Show this page", page %>
-    </p>
+    <div class="card col-lg-4 mx-auto my-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= page.title %></h5>
+        <p class="card-text">Position: <%= page.position %></p>
+        <p class = "card-text">Page Type: <%= page.page_type %></p>
+        <p class = "card-text">Destination: <%= link_to page.title, page.destination, :target => "_blank" %></p>
+        <p class = "card-text"> Visible: <%= page.visible %></p>
+        <p class = "card-text"> Content: <%= page.content %></p>
+
+        <p>
+          <%= link_to "Show this page", page %>
+        </p>
+      </div>
+    </div>
   <% end %>
 </div>
 

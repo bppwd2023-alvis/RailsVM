@@ -1,16 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Events</h1>
-<%= month_calendar do |date| %>
-  <%= date %>
-<% end %>
-
-<div id="events">
+<div id="events" class = "row">
   <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
+    <div class="card col-lg-4 mx-auto my-3" style="width: 18rem;">
+      <div class="card-body">
+        <%= image_tag(event.photo, width: "100%") %>
+        <h5 class="card-title"><%= event.title %></h5>
+        <p class="card-text">Details: <%= event.details %></p>
+        <p class = "card-text">Start Date: <%= event.eventstart %></p>
+        <p class = "card-text">End Date: <%= event.eventend %></p>
+        <p class = "card-text"> Featured: <%= event.featured %></p>
+        <p class = "card-text"> Occurence: <%= event.occurence %></p>
+
+        <p>
+          <%= link_to "Show this event", event %>
+        </p>
+      </div>
+    </div>
   <% end %>
 </div>
 

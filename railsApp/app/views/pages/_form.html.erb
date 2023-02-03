@@ -11,39 +11,55 @@
     </div>
   <% end %>
 
+  <div data-controller = "page">
+    <%= form.label :page_type, style: "display: block" %>
+    <%= form.select :page_type, ["Basic Page", "External URL", "Internal URL", "PDF"], {}, data: {action: "change->page#typeChange","page-target": "title"}  %>
+  </div>
+
   <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class = "allContent">
     <%= form.label :section_id, style: "display: block" %>
-    <%= form.number_field :section_id %>
+    <%= form.select :section_id, options_from_collection_for_select(Section.all, 'id', 'title') %>
   </div>
 
-  <div>
+  <div class = "allContent">
     <%= form.label :position, style: "display: block" %>
     <%= form.number_field :position %>
   </div>
 
-  <div>
-    <%= form.label :page_type, style: "display: block" %>
-    <%= form.text_field :page_type %>
-  </div>
-
-  <div>
+  <div id = "destination">
     <%= form.label :destination, style: "display: block" %>
     <%= form.text_field :destination %>
   </div>
 
-  <div>
+  <div class = "allContent">
     <%= form.label :visible, style: "display: block" %>
     <%= form.check_box :visible %>
   </div>
 
-  <div>
+  <div id = "content" class = "allContent">
     <%= form.label :content, style: "display: block" %>
     <%= form.text_area :content %>
+  </div>
+
+  <div id = "type1">
+    
+  </div>
+
+  <div id = "type2">
+
+  </div>
+
+  <div id = "type3">
+
+  </div>
+
+  <div id = "type4">
+
   </div>
 
   <div>

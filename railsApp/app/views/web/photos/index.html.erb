@@ -1,0 +1,10 @@
+<h1>Web::Photos#index</h1>
+<p>Find me in app/views/web/photos/index.html.erb</p>
+<div class = "row">
+    <% @photos.each do |photo| %>
+        <div class = "col-lg-4">
+            <%= image_tag(photo.image, width: "50%") %>
+            <%= link_to photo.title, web_photos_show_path(id: photo.id) %>
+        </div>
+    <% end %>
+</div>

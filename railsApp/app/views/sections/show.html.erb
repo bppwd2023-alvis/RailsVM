@@ -2,6 +2,9 @@
 
 <%= render @section %>
 
+<% Page.all.each do |p| %>
+  <%= p.title %>
+<% end %>
 <div>
   <%= link_to "Edit this section", edit_section_path(@section) %> |
   <%= link_to "Back to sections", sections_path %>

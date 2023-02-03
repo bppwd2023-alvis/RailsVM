@@ -1,0 +1,43 @@
+<h1>Admin</h1>
+<div class = "row">
+
+    <div class="card col-lg-6 mx-auto my-3" style="width: 18rem;">
+      <div class="card-body">
+        <div>
+            <%= link_to "albums", albums_path(@albums) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-lg-6 mx-auto my-3" style="width: 18rem;">
+      <div class="card-body text-center">
+        <div>
+            <%= link_to "events", events_path(@events) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-lg-6 mx-auto my-3" style="width: 18rem;">
+      <div class="card-body">
+        <div>
+            <%= link_to "pages", pages_path(@pages) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-lg-6 mx-auto my-3" style="width: 18rem;">
+      <div class="card-body">
+        <div>
+            <%= link_to "photos", photos_path(@photos) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-lg-6 mx-auto my-3" style="width: 18rem;">
+      <div class="card-body">
+        <div>
+            <%= link_to "sections", sections_path(@sections) %>
+        </div>
+      </div>
+    </div>
+</div>

@@ -17,3 +17,6 @@ nav{
     padding-top: 100px;
 }
 
+button.red{
+    border: 0;
+}

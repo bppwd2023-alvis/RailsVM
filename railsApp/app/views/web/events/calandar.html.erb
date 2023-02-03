@@ -1,13 +1,34 @@
-<h1>Events</h1>
-<p>Find me in app/views/web/events/calandar.html.erb</p>
-<h1>Calandar</h1>
 <div class = "p-3">
+    <h1>Featured Events</h1>
+</div>
+
+<div class = "row">
+    <% @events.each do |e| %>
+        <% if e.featured %>
+            <div class = "col-lg-3">
+                <div class="card text-center mx-auto" style="width: 13rem; height: 300px;">
+                    <%= image_tag(e.photo) %> 
+                    <div class="card-body">
+                        <h5 class="card-title"> <%= e.title %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Start: <%= e.eventstart %></h6>
+                        <h6 class="card-subtitle mb-2 text-muted">End: <%= e.eventend %></h6>
+                        <p class = "card-text align-text-bottom"><%= e.details %></p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+
+<div class = "p-4 position-relative">
     <%= month_calendar(events: @events) do |date, events| %>
-        <%= date %>
+        <div class = "m-3" style = "max-height:150px"> 
+            <%= date.day %> 
+        </div>
 
         <% events.each do |event| %>
             <div>
-                <%= event.title %>
+                <%= link_to event.title, event_path(id: event.id) %>
             </div>
         <% end %>
     <% end %>

@@ -42,6 +42,15 @@
   </div>
 
   <div>
+    <%= form.label :featured, style: "display: block" %>
+    <%= form.check_box :featured %>
+  </div>
+
+  <div>
+    <%= form.file_field :photo %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
